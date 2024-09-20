@@ -32,4 +32,9 @@ announce "linux build appears to have been successful"
 announce "copying files"
 install -v -m644 -D ./arch/arm/zImage /dist/zImage
 install -v -m644 -D ./arch/arm/boot/dts/*.dtb /dist
+
+
+# for file in $(find source -type f -name *.py); do
+#     install -m 644 -D ${file} dest/${file#source/}
+# done
 announce "files copied"
