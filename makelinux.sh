@@ -31,5 +31,5 @@ make -j8 zImage dtbs modules
 announce "linux build appears to have been successful"
 announce "copying files"
 install -v -m644 -D ./arch/arm/zImage /dist/zImage
-install -v -m644 -D./arch/arm/boot/dts/*.dtb /dist
+install -v -m644 -D ./arch/arm/boot/dts/*.dtb /dist
 announce "files copied"
