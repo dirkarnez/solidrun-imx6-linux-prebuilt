@@ -1,0 +1,68 @@
+name: docker-compose-actions-workflow
+on:
+  workflow_dispatch:
+    
+    # # Sequence of patterns matched against refs/tags
+    # tags:
+    #   - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    #   - 'c*'
+
+permissions:
+    contents: write
+    
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      # - run: |
+      #     sudo chown -R runner:docker ./
+
+    # sudo chown :1000 testdir/
+    # sudo chmod g+s testdir/
+
+      # - name: Setup QEMU
+      #   uses: docker/setup-qemu-action@v3
+      #   with:
+      #     platforms: linux/amd64,linux/arm64
+      
+      # - name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v3
+
+      - name: set permission and run
+        run: |
+          sudo chmod -R +x . && \
+          ./build.sh
+
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: "u-boot-imx6/dist"
+          filename: "u-boot-imx6-${{ github.ref_name }}.zip"
+        
+      - name: Release prebuilt
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "u-boot-imx6/dist/u-boot-imx6-${{ github.ref_name }}.zip"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+
+# cd u-boot-imx6
+# export CROSS_COMPILE=aarch64-none-elf-
+# # optionally add options to configs/mx6cuboxi_defconfig
+# make mx6cuboxi_defconfig
+# # optionally configure u-boot graphically
+# # make menuconfig
+# make
+
+# git clone --branch v2018.01-solidrun-imx6 https://github.com/SolidRun/u-boot.git u-boot-imx6
+# cd u-boot-imx6
+# export CROSS_COMPILE=<Set toolchain prefix to your toolchain>
+# # optionally add options to configs/mx6cuboxi_defconfig
+# make mx6cuboxi_defconfig
+# # optionally configure u-boot graphically
+# # make menuconfig
+# make
