@@ -11,7 +11,8 @@ function announce () {
 
 set -e
 
-export PATH=/opt/gcc-arm-10.3-2021.07-aarch64-arm-none-linux-gnueabihf/bin:$PATH
+export PATH=/opt/gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf/bin:$PATH
+
 #  CC=arm-none-linux-gnueabihf-gcc
 cd /workspace
 
@@ -21,7 +22,7 @@ cd ./linux-fslc
 
 git checkout "3b4f1a2b7c57f198641c0a45e23fe7255a164daf"
 
-export CROSS_COMPILE="arm-none-linux-gnueabihf-"
+export CROSS_COMPILE="arm-linux-gnueabihf-"
 export ARCH="arm"
 
 # export UBOOT_CONFIG="mx6cuboxi_defconfig"
