@@ -22,7 +22,8 @@ RUN dpkg --add-architecture i386 && \
    apt-get -y --no-install-recommends --allow-unauthenticated install \
    libc6:i386 \
    libncurses5:i386 \
-   libstdc++6:i386
+   libstdc++6:i386 \
+   zlib1g:i386
 
 # RUN adduser --disabled-password --gecos "" --uid 1001 runner \
 #     && groupadd docker --gid 123 \
