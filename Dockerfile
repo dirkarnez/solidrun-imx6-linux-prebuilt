@@ -18,6 +18,7 @@ RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
    lzop
 
 RUN dpkg --add-architecture i386 && \
+   apt-get update && \
    apt-get -y --no-install-recommends --allow-unauthenticated install \
    libc6:i386 \
    libncurses5:i386 \
