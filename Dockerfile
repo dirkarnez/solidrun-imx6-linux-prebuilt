@@ -14,7 +14,8 @@ RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
    make \
    bash \
    bc \
-   file
+   file \
+   lzop
 
 # RUN adduser --disabled-password --gecos "" --uid 1001 runner \
 #     && groupadd docker --gid 123 \
