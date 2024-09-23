@@ -33,21 +33,21 @@ jobs:
       - name: set permission and run
         run: |
           sudo chmod -R +x . && \
-          ./build.sh
+          docker compose up --build && docker compose down
 
-      - name: Archive Release
-        uses: thedoctor0/zip-release@master
-        with:
-          type: 'zip'
-          directory: "u-boot-imx6/dist"
-          filename: "u-boot-imx6-${{ github.ref_name }}.zip"
+      # - name: Archive Release
+      #   uses: thedoctor0/zip-release@master
+      #   with:
+      #     type: 'zip'
+      #     directory: "u-boot-imx6/dist"
+      #     filename: "u-boot-imx6-${{ github.ref_name }}.zip"
         
-      - name: Release prebuilt
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "u-boot-imx6/dist/u-boot-imx6-${{ github.ref_name }}.zip"
-          allowUpdates: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Release prebuilt
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "u-boot-imx6/dist/u-boot-imx6-${{ github.ref_name }}.zip"
+      #     allowUpdates: true
+      #     token: ${{ secrets.GITHUB_TOKEN }}
 
 
 # cd u-boot-imx6
