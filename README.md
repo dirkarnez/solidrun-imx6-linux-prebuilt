@@ -1,5 +1,9 @@
-solidrun-imx6-uboot-prebuilt
+solidrun-imx6-linux-prebuilt
 ============================
+- https://github.com/Freescale/meta-freescale/issues/192
+- https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0b999ae3614d09d97a1575936bcee884f912b10e
+
+
 - [i.MX6 U-Boot - Developer Center -  SolidRun](https://solidrun.atlassian.net/wiki/spaces/developer/pages/287179374/i.MX6+U-Boot#Compiling-from-source)
     - `git clone --branch v2018.01-solidrun-imx6 https://github.com/SolidRun/u-boot.git /workspace/u-boot-imx6`
     - > Note: The resulting binaries are `SPL` and `u-boot.img`.
