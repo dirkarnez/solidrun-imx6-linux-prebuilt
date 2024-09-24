@@ -27,3 +27,10 @@ jobs:
           type: 'zip'
           directory: "dist"
           filename: "solidrun-imx6-linux-${{ github.ref_name }}.zip"
+          
+      - name: Release prebuilt
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/solidrun-imx6-linux-${{ github.ref_name }}.zip"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
