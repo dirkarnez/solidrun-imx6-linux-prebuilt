@@ -18,6 +18,7 @@ jobs:
         run: |
           sudo chmod -R +x . && \
           mkdir -p dist && \
+          ls && \
           docker compose up --build && docker compose down
 
       - name: Archive Release
