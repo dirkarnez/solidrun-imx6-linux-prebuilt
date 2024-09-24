@@ -6,6 +6,9 @@ solidrun-imx6-linux-prebuilt
 ### Notes
 - Use older compiler: ARM company only provides latest versions of compiler. It was linaro.org providing compilers before.
 
+### Board Pins
+- [HummingBoard Pro Quick Start Guide - Developer Center -  SolidRun](https://solidrun.atlassian.net/wiki/spaces/developer/pages/270631039/HummingBoard+Pro+Quick+Start+Guide#[hardBreak]Booting-form-an-SD-card)
+
 ### Make bootable SD Card with U-Boot
 - [Creating a Bootable SD Card - MitySOM-iMX6 - Critical Link Support](https://support.criticallink.com/redmine/projects/imx6/wiki/Creating_a_Bootable_SD_Card)
 
