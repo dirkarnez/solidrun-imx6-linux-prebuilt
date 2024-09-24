@@ -17,6 +17,7 @@ solidrun-imx6-linux-prebuilt
 
 - [i.MX6 Kernel - Developer Center -  SolidRun](https://solidrun.atlassian.net/wiki/spaces/developer/pages/286916713/i.MX6+Kernel)
 - [i.MX6 U-Boot - Developer Center -  SolidRun](https://solidrun.atlassian.net/wiki/spaces/developer/pages/287179374/i.MX6+U-Boot#Compiling-from-source)
+- [i.MX Software and Development Tools | NXP Semiconductors](https://www.nxp.com/design/design-center/software/embedded-software/i-mx-software:IMX-SW)
     - `git clone --branch v2018.01-solidrun-imx6 https://github.com/SolidRun/u-boot.git /workspace/u-boot-imx6`
     - > Note: The resulting binaries are `SPL` and `u-boot.img`.
     - Official prebuilts: [SolidRun Images](https://images.solid-run.com/IMX6)
