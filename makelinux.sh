@@ -31,7 +31,8 @@ announce "linux build appears to have been successful" && \
 ls -R ./arch/arm && \
 announce "copying files" && \
 install -v -m644 -D ./arch/arm/boot/zImage /dist/zImage && \
-mkdir -p ./dist/dts && install -v -m644 -D ./arch/arm/boot/dts/*.dtb /dist/dts/ && \
+mkdir -p /dist/dts && \
+install -v -m644 -D ./arch/arm/boot/dts/*.dtb /dist/dts/ && \
 announce "files copied"
 
 # for file in $(find source -type f -name *.py); do
