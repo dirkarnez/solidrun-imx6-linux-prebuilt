@@ -1,5 +1,7 @@
 solidrun-imx6-linux-prebuilt
 ============================
+[dirkarnez/solidrun-imx6-u-boot-prebuilt](https://github.com/dirkarnez/solidrun-imx6-u-boot-prebuilt)
+
 - https://github.com/Freescale/meta-freescale/issues/192
 - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0b999ae3614d09d97a1575936bcee884f912b10e
 
