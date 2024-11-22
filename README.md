@@ -93,6 +93,12 @@ solidrun-imx6-linux-prebuilt
 ### Linux Kernel
 - [i.MX6 Kernel - Developer Center -  SolidRun](https://solidrun.atlassian.net/wiki/spaces/developer/pages/286916713)
 
+### Debian
+- [debian-builder/README.armhf.md at develop-pure · SolidRun/debian-builder](https://github.com/SolidRun/debian-builder/blob/develop-pure/README.armhf.md)
+- [debian-builder/.github/workflows/build.yml at develop-pure · SolidRun/debian-builder](https://github.com/SolidRun/debian-builder/blob/develop-pure/.github/workflows/build.yml)
+- https://solid-run-images.sos-de-fra-1.exo.io/Pure-Debian/armhf/12/2024-11-18_1ba322c/debian-12.8.0-armhf-netinst.img
+- https://github.com/SolidRun/debian-builder/blob/develop-pure/runme.sh#L197
+
 ### PCB
 - [HummingBoard Pro Quick Start Guide - Developer Center -  SolidRun](https://solidrun.atlassian.net/wiki/spaces/developer/pages/270631039/HummingBoard+Pro+Quick+Start+Guide#Hardware-Setup)
 
