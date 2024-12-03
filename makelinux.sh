@@ -25,6 +25,7 @@ export ARCH="arm" && \
 announce "Building linux" && \
 announce "make imx_v7_cbi_hb_defconfig" && \
 make imx_v7_cbi_hb_defconfig && \
+echo "CONFIG_DEBUG=y" >> .config && \
 announce "make zImage dtbs modules" && \
 make zImage dtbs modules && \
 announce "linux build appears to have been successful" && \
