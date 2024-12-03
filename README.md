@@ -86,6 +86,7 @@ solidrun-imx6-linux-prebuilt
     
 ### Tutorials
 - [Compiling latest U-Boot for i.MX6 (2015 edition) | Laird Connectivity is Now Ezurio](https://www.ezurio.com/resources/software-announcements/compiling-latest-u-boot-for-i-mx6-2015-edition)
+- [移植 Linux Kernel 造成無法開機之解決方案以及除錯工具 – SZ Lin with Cybersecurity & Embedded Linux](https://szlin.me/2017/05/17/unable-to-boot-with-linux-kernel/)
 
 ### Compilers
 - [Downloads | GNU-A Downloads – Arm Developer](https://developer.arm.com/downloads/-/gnu-a)
