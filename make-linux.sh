@@ -28,13 +28,12 @@ set -e
 # CC=arm-none-linux-gnueabihf-gcc
 # make mrproper
 
-export PATH="/opt/gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf/bin:$PATH" && \
-arm-linux-gnueabihf-gcc --version && \
-cd /workspace && \
-git clone --branch solidrun-imx_4.9.x_1.0.0_ga https://github.com/SolidRun/linux-fslc.git && \
-cd ./linux-fslc && \
-git checkout "3b4f1a2b7c57f198641c0a45e23fe7255a164daf" && \
-export CROSS_COMPILE="arm-linux-gnueabihf-" && \
+# git clone --branch solidrun-imx_4.9.x_1.0.0_ga https://github.com/SolidRun/linux-fslc.git && \
+
+export PATH="/opt/arm-cortexa9_neon-linux-gnueabihf/bin:$PATH" && \
+arm-cortexa9_neon-linux-gnueabihf-gcc --version && \
+cd /workspace/linux-fslc && \
+export CROSS_COMPILE="arm-cortexa9_neon-linux-gnueabihf-" && \
 export ARCH="arm" && \
 announce "Building linux" && \
 announce "make imx_v7_cbi_hb_defconfig" && \
