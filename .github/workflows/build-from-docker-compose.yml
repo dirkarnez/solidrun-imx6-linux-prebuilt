@@ -30,12 +30,11 @@ jobs:
         with:
           type: 'zip'
           directory: "dist"
-          filename: "solidrun-imx6-linux-${{ github.ref_name }}.zip"
+          filename: "solidrun-imx6-linux-${{ github.ref_name }}-arm-cortexa9_neon-linux-gnueabihf-gcc-15.2.0-crosstool-ng-1.28.0.zip"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/solidrun-imx6-linux-${{ github.ref_name }}.zip"
+          artifacts: "dist/solidrun-imx6-linux-${{ github.ref_name }}-arm-cortexa9_neon-linux-gnueabihf-gcc-15.2.0-crosstool-ng-1.28.0.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
-
