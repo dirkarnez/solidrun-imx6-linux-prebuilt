@@ -1,0 +1,36 @@
+name: docker-compose-actions-workflow
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'c*'
+
+permissions:
+    contents: write
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set permission and run
+        run: |
+          sudo chmod -R +x . && \
+          mkdir -p dist && \
+          ls && \
+          docker compose up --build && docker compose down
+
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: "dist"
+          filename: "solidrun-imx6-linux-${{ github.ref_name }}.zip"
+          
+      - name: Release prebuilt
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/solidrun-imx6-linux-${{ github.ref_name }}.zip"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
