@@ -5,6 +5,9 @@ solidrun-imx6-linux-prebuilt
 - https://github.com/Freescale/meta-freescale/issues/192
 - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0b999ae3614d09d97a1575936bcee884f912b10e
 
+### TODOs
+- [ ] Enable `CONFIG_BLK_DEV_INITRD`
+
 ### Notes
 - Use older compiler: ARM company only provides latest versions of compiler. It was linaro.org providing compilers before.
 
