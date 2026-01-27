@@ -7,6 +7,7 @@ solidrun-imx6-linux-prebuilt
 
 ### TODOs
 - [ ] Enable `CONFIG_BLK_DEV_INITRD`
+    - [Linux Initramfs, With and Without Yocto - ejaaskel](https://ejaaskel.dev/linux-initramfs-with-and-without-yocto/)
 
 ### Notes
 - Use older compiler: ARM company only provides latest versions of compiler. It was linaro.org providing compilers before.
