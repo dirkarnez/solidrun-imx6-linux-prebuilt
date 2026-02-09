@@ -2,9 +2,12 @@ FROM debian:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# build-essential \
+
 RUN apt-get update
 RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
-   build-essential \
+   gcc-8 \
+   g++-8 \
    git \
    zip \
    unzip \
