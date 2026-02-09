@@ -13,6 +13,7 @@ services:
     platform: linux/amd64
     build: .
     # user: root
+    # command: sh -c "tail -f /dev/null"
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     volumes:
