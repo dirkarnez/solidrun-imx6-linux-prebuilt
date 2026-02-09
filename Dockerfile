@@ -18,13 +18,13 @@ RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
    file \
    lzop
 
-# RUN dpkg --add-architecture i386 && \
-#    apt-get update && \
-#    apt-get -y --no-install-recommends --allow-unauthenticated install \
-#    libc6:i386 \
-#    libncurses5:i386 \
-#    libstdc++6:i386 \
-#    zlib1g:i386
+RUN dpkg --add-architecture i386 && \
+   apt-get update && \
+   apt-get -y --no-install-recommends --allow-unauthenticated install \
+   libc6:i386 \
+   libncurses5:i386 \
+   libstdc++6:i386 \
+   zlib1g:i386
 
 # RUN adduser --disabled-password --gecos "" --uid 1001 runner \
 #     && groupadd docker --gid 123 \
@@ -39,23 +39,29 @@ RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
 #    gcc-arm-none-eabi \
 #    gcc-arm-linux-gnueabihf=4:10.2.1-1
 
-# RUN apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
-#    ln -f -s /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 /lib && \
-#    ln -f -s /usr/aarch64-linux-gnu/lib/libc.so.6 /lib && \
-#    ln -f -s /usr/aarch64-linux-gnu/lib/libdl.so.2 /lib && \
-#    ln -f -s /usr/aarch64-linux-gnu/lib/libm.so.6 /lib
+RUN apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
+   ln -f -s /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 /lib && \
+   ln -f -s /usr/aarch64-linux-gnu/lib/libc.so.6 /lib && \
+   ln -f -s /usr/aarch64-linux-gnu/lib/libdl.so.2 /lib && \
+   ln -f -s /usr/aarch64-linux-gnu/lib/libm.so.6 /lib
    
 # RUN cd /opt; \
 #    wget https://developer.arm.com/-/media/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-aarch64-arm-none-linux-gnueabihf.tar.xz; \
 #    tar xvfJ gcc-arm-10.3-2021.07-aarch64-arm-none-linux-gnueabihf.tar.xz; \
 #    rm gcc-arm-10.3-2021.07-aarch64-arm-none-linux-gnueabihf.tar.xz
 
+# RUN cd /opt; \
+#    wget https://github.com/dirkarnez/crosstool-ng-prebuilt/releases/download/v20251209/arm-cortexa9_neon-linux-gnueabihf.zip && \
+#    unzip arm-cortexa9_neon-linux-gnueabihf.zip -d arm-cortexa9_neon-linux-gnueabihf && \
+#    /opt/arm-cortexa9_neon-linux-gnueabihf/bin/arm-cortexa9_neon-linux-gnueabihf-gcc --version && \
+#    rm arm-cortexa9_neon-linux-gnueabihf.zip && \
+#    chmod -R 777 .
+
 RUN cd /opt; \
-   wget https://github.com/dirkarnez/crosstool-ng-prebuilt/releases/download/v20251209/arm-cortexa9_neon-linux-gnueabihf.zip && \
-   unzip arm-cortexa9_neon-linux-gnueabihf.zip -d arm-cortexa9_neon-linux-gnueabihf && \
-   /opt/arm-cortexa9_neon-linux-gnueabihf/bin/arm-cortexa9_neon-linux-gnueabihf-gcc --version && \
-   rm arm-cortexa9_neon-linux-gnueabihf.zip && \
-   chmod -R 777 .
+   wget https://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf.tar.xz && \
+   tar xvfJ gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf.tar.xz && \
+   rm gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf.tar.xz && \
+   chmod -R +x . 
 
 RUN mkdir /workspace
 RUN mkdir /dist
