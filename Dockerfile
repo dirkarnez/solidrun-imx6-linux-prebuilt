@@ -1,13 +1,12 @@
-FROM debian:latest
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# build-essential \
+# 
 
 RUN apt-get update
 RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
-   gcc-8 \
-   g++-8 \
+   build-essential \
    git \
    zip \
    unzip \
