@@ -38,11 +38,11 @@ RUN dpkg --add-architecture i386 && \
 #    gcc-arm-none-eabi \
 #    gcc-arm-linux-gnueabihf=4:10.2.1-1
 
-RUN apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
-   ln -f -s /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 /lib && \
-   ln -f -s /usr/aarch64-linux-gnu/lib/libc.so.6 /lib && \
-   ln -f -s /usr/aarch64-linux-gnu/lib/libdl.so.2 /lib && \
-   ln -f -s /usr/aarch64-linux-gnu/lib/libm.so.6 /lib
+# RUN apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
+#    ln -f -s /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 /lib && \
+#    ln -f -s /usr/aarch64-linux-gnu/lib/libc.so.6 /lib && \
+#    ln -f -s /usr/aarch64-linux-gnu/lib/libdl.so.2 /lib && \
+#    ln -f -s /usr/aarch64-linux-gnu/lib/libm.so.6 /lib
    
 # RUN cd /opt; \
 #    wget https://developer.arm.com/-/media/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-aarch64-arm-none-linux-gnueabihf.tar.xz; \
