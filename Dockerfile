@@ -4,7 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
-   build-essential \
+   gcc-9 \
+   g++-9 \
    git \
    zip \
    unzip \
